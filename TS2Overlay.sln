@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS2OverlayCore", "TS2OverlayInternal\TS2OverlayCore.csproj", "{4EB66EA2-B443-4A1A-ADF7-A1A1515D4564}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS2Overlay", "TS2Overlay\TS2Overlay.csproj", "{B0FD3D23-074C-4AFC-AC92-89D3B22BEE58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EB66EA2-B443-4A1A-ADF7-A1A1515D4564}.Debug|x86.ActiveCfg = Debug|x86
+		{4EB66EA2-B443-4A1A-ADF7-A1A1515D4564}.Debug|x86.Build.0 = Debug|x86
+		{4EB66EA2-B443-4A1A-ADF7-A1A1515D4564}.Release|x86.ActiveCfg = Release|x86
+		{4EB66EA2-B443-4A1A-ADF7-A1A1515D4564}.Release|x86.Build.0 = Release|x86
+		{B0FD3D23-074C-4AFC-AC92-89D3B22BEE58}.Debug|x86.ActiveCfg = Debug|x86
+		{B0FD3D23-074C-4AFC-AC92-89D3B22BEE58}.Debug|x86.Build.0 = Debug|x86
+		{B0FD3D23-074C-4AFC-AC92-89D3B22BEE58}.Release|x86.ActiveCfg = Release|x86
+		{B0FD3D23-074C-4AFC-AC92-89D3B22BEE58}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+﻿<Window x:Class="TS2OverlayCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:self="clr-namespace:TS2OverlayCore"
+        Title="MainWindow"
+        Top="{Binding Source={x:Static self:Properties.Settings.Default}, Path=ApplicationTop, Mode=TwoWay}"
+        Left="{Binding Source={x:Static self:Properties.Settings.Default}, Path=ApplicationLeft, Mode=TwoWay}"
+        Height="324" Width="394" Topmost="True" OpacityMask="White"
+        WindowStyle="None" AllowsTransparency="True" Background="#76000000" SizeToContent="WidthAndHeight"
+        MouseLeftButtonDown="HandleLeftMouseButtonDown" ShowInTaskbar="False" Focusable="False">
+    <Window.Resources>
+        <Style x:Key="SpeakerRowStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Red"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Height" Value="16"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Content" Value="{Binding Name}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Speaking}" Value="True">
+                    <Setter Property="Foreground" Value="Lime"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220*" />
+            <ColumnDefinition Width="152*" />
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding Path=Teamspeak.CurrentChannelName}" Height="24" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="150" />
+        <Button Content="O" Height="20" Margin="150,1,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="15" FontSize="10" Background="Transparent" Foreground="White" Click="HandleOptionsClicked" />
+        <Button Content="X" Height="20" Margin="165,1,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="15" FontSize="10" Background="Transparent" Foreground="White" Click="HandleExitClicked" />
+        <ListBox Height="100" Width="180"
+                 HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="0,21,0,0" BorderThickness="0" FontSize="10"
+                 Background="Transparent" Foreground="White" IsHitTestVisible="False"
+                 ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 ItemsSource="{Binding Path=Teamspeak.Speakers}"
+                 ItemContainerStyle="{StaticResource SpeakerRowStyle}"
+                 LayoutUpdated="HandleListLayoutUpdated"
+                 Name="_listbox">
+        </ListBox>
+    </Grid>
+</Window>
